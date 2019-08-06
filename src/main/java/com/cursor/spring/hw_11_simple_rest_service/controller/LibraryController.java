@@ -37,14 +37,14 @@ public class LibraryController {
         return map;
     }
 
-    @GetMapping("/sortedBookByAuthor/{id}")
-    public List<Book> sortedBookByAuthor(@PathVariable("id") int id) {
+    @GetMapping("/sortedBooksByAuthor/{id}")
+    public List<Book> sortedBooksByAuthor(@PathVariable("id") int id) {
         return LibraryServiceImpl.getBooksByAuthor(id);
     }
 
     @ResponseBody
-    @GetMapping("/sortedBookByAuthor/{genre}")
-    public List<Book> sortedBookByGenre(@PathVariable("genre") String genre) {
+    @GetMapping("/sortedBooksByGenre/{genre}")
+    public List<Book> sortedBooksByGenre(@PathVariable("genre") String genre) {
         return LibraryServiceImpl.getBooksByGenre(genre);
     }
 
