@@ -29,8 +29,8 @@ public class LibraryController {
         return LibraryServiceImpl.addBook(book);
     }
 
-    @PutMapping("/addBookToAuthor")
-    public Map<Integer, Book> addBookToAuthor(@RequestBody Book book1, int authorId) {
+    @PutMapping("/addBookToAuthor/{authorId}")
+    public Map<Integer, Book> addBookToAuthor(@RequestBody Book book1, @PathVariable int authorId) {
         Map<Integer, Book> map = new LinkedHashMap<>();
         LibraryServiceImpl.addAuthorBook(authorId, book1);
         map.put(authorId, book1);
